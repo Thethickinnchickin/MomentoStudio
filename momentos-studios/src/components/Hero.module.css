@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Viaoda+Libre&display=swap");
+
+/* Hero.module.css */
+
+/* Root variables stay the same */
+:root {
+  --primary: #00bfff;
+  --primary-dark: #009acd;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --text-color: #ffffff;
+  --card-bg: rgba(0, 0, 0, 0.6);
+  --card-border: rgba(255, 255, 255, 0.2);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.5) contrast(1.1);
+}
+
+.hero .overlay {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Logo Card entrance - smooth, less bouncy */
+.logoCard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  margin-bottom: 2rem;
+  max-width: 350px;
+  max-height: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Smooth entrance animation */
+  opacity: 0;
+  transform: translateY(-30px) scale(0.9);
+  animation: logoCardEntrance 1s ease-out forwards;
+}
+
+@keyframes logoCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  filter: drop-shadow(0 0 5px #00bfff);
+}
+
+/* Logo image smooth fade-in */
+.logo img {
+  height: 55px;
+  width: auto;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: logoFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  
+}
+
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo text fade-in */
+.logoText {
+  color: white;
+  font-family: "Viaoda Libre", cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  opacity: 0;
+  animation: textFadeIn 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.textContent h1 {
+  font-family: "Viaoda Libre", cursive;
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: textFadeIn 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.textContent p {
+  font-family: "Poiret One", cursive;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  opacity: 0;
+  animation: textFadeIn 1s ease forwards;
+  animation-delay: 1s;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.8rem 2.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.4);
+  opacity: 0;
+  animation: textFadeIn 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.ctaButton:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 191, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .textContent h1 {
+    font-size: 2rem;
+  }
+  .textContent p {
+    font-size: 1rem;
+  }
+  .logoCard {
+    padding: 0.8rem;
+  }
+}
+
+/* Add this to your Hero.module.css */
+
+/* Button entrance animation */
+.button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+  backdrop-filter: blur(10px);
+
+  /* New entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: buttonEntrance 0.8s ease-out forwards;
+  animation-delay: 1.4s; /* comes after logo and text */
+}
+
+.button:hover {
+  background: rgba(0, 191, 255, 0.2);
+  border-color: rgba(0, 191, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
+  transform: translateY(-2px);
+  cursor: none;
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+/* Keyframes for button entrance */
+@keyframes buttonEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
