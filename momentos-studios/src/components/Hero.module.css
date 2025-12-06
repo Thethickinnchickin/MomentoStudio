@@ -234,3 +234,8 @@
   }
 }
 
+video {
+  pointer-events: none;
+}
+
+

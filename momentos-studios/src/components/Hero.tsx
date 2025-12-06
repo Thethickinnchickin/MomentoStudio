@@ -6,16 +6,19 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       {/* Background Video */}
-      <video
-        className={styles.video}
-        src="/videos/studio.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-      />
+    <video
+      className={styles.video}
+      autoPlay
+      playsInline
+      muted
+      loop
+      preload="auto"
+      disablePictureInPicture
+      controls={false}
+    >
       <source src="/videos/studio.mp4" type="video/mp4" />
+    </video>
+
 
       {/* Overlay for content */}
       <div className={styles.overlay}>
