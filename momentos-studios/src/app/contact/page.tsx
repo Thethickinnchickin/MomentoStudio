@@ -23,9 +23,9 @@ export default function ContactPage() {
     setStatus("Sending...");
 
     // Replace these with your EmailJS IDs
-    const SERVICE_ID = "service_2ewjto1";
-    const TEMPLATE_ID = "template_zxri5r7";
-    const PUBLIC_KEY = "PJ4m2AYbZxGfY6PXZ";
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
