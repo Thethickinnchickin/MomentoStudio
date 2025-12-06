@@ -1,44 +1,57 @@
+"use client";
+
 import Image from "next/image";
-import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { useState } from "react";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <nav className={styles.navbar}>
+      {/* Logo */}
       <div className={styles.logo}>
-        <Image
-          src="/images/logo.png"
-          alt="Momentos Studios"
-          width={60}
-          height={60}
-          priority
-        />
-        <span>Momentos Studios</span>
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            alt="Momentos Studios"
+            width={60}
+            height={60}
+            priority
+          />
+        </Link>
       </div>
 
-      <div className={styles.links}>
-        <a href="#services">About Us</a>
-        <a href="#studio">FAQs</a>
-        <a href="#booking">Contact</a>
+      {/* Hamburger button for mobile */}
+      <div className={styles.hamburger} onClick={toggleMenu}>
+        <div className={`${styles.bar} ${isOpen ? styles.bar1 : ""}`}></div>
+        <div className={`${styles.bar} ${isOpen ? styles.bar2 : ""}`}></div>
+        <div className={`${styles.bar} ${isOpen ? styles.bar3 : ""}`}></div>
+      </div>
+
+      {/* Links */}
+      <div className={`${styles.links} ${isOpen ? styles.active : ""}`}>
+        <a href="/about">About Us</a>
+        <a href="/faq">FAQs</a>
+        <a href="/contact">Contact</a>
 
         <div className={styles.iconGroup}>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/momentos__studios/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              src="/icons/instagram.svg"
+              src="/icons/instagram-nav.svg"
               alt="Instagram"
               width={24}
               height={24}
             />
           </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="mailto:info@momentos.studio">
             <Image
               src="/icons/email.svg"
               alt="Email"
@@ -49,9 +62,9 @@ export default function Navbar() {
           </a>
         </div>
 
-        <button className={styles.button}>Book Now</button>
-
-
+        <Link href="/booking">
+          <button className={styles.button}>Book Now</button>
+        </Link>
       </div>
     </nav>
   );

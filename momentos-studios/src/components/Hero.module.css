@@ -111,7 +111,7 @@
   color: white;
   font-family: "Viaoda Libre", cursive;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   margin-left: 0.5rem;
   opacity: 0;
   animation: textFadeIn 1s ease forwards;
@@ -131,7 +131,7 @@
 
 .textContent h1 {
   font-family: "Viaoda Libre", cursive;
-  font-size: 3rem;
+  font-size: 5rem;
   color: var(--text-color);
   margin-bottom: 0.5rem;
   opacity: 0;
@@ -141,7 +141,7 @@
 
 .textContent p {
   font-family: "Poiret One", cursive;
-  font-size: 1.2rem;
+  font-size: 2.6rem;
   color: var(--text-color);
   opacity: 0;
   animation: textFadeIn 1s ease forwards;

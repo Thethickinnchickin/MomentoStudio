@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CustomCursor from "../components/CustomCursor";
 
+
 export const metadata = {
   title: "Momentos Studios",
   description: "Recording • Mixing • Mastering",

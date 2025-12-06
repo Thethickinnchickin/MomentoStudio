@@ -1,0 +1,148 @@
+.faqSection {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background-color: #0a0a0a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 4.0rem;
+
+  /* entrance animation */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Triggered when JS adds class */
+.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+
+  /* Smooth entrance fade */
+  animation: fadeDown 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faqList {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.2rem 1.6rem;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+
+  /* Entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.6s ease forwards;
+}
+
+/* Hover glow */
+.card:hover {
+  border-color: rgba(0, 191, 255, 0.7);
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.4);
+}
+
+/* Active state glow */
+.card.active {
+  border-color: rgba(0, 191, 255, 1);
+  box-shadow: 0 0 18px rgba(0, 191, 255, 0.6);
+}
+
+/* Entrance animation keyframe */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.active .question {
+  color: rgba(0, 191, 255, 1);
+}
+
+.answer {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.contactNote {
+  margin-top: 4rem;
+  font-size: 1.2rem;
+  opacity: 0.85;
+  max-width: 700px;
+
+  /* Fades in after the list */
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 0.7s;
+}
+
+.contactNote a {
+  color: rgba(0, 191, 255, 1);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+
+  .question {
+    font-size: 1.05rem;
+  }
+}

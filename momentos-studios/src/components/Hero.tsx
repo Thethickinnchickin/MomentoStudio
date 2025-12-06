@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Hero.module.css";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -33,8 +34,9 @@ export default function Hero() {
           <p>Major-Label Sound. Beach-House Feels.</p>
         </div>
 
-        {/* Call-to-action button */}
-        <button className={styles.button}>Book a Session</button>
+        <Link href="/booking">
+          <button className={styles.button}>Book Now</button>
+        </Link>
       </div>
     </section>
   );

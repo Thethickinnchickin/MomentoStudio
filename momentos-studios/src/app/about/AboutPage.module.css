@@ -1,0 +1,10 @@
+.container {
+  padding-top: 6rem; /* adjust to make space at top */
+}
+
+/* Optional: add responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-top: 4rem;
+  }
+}

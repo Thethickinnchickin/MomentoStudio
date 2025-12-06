@@ -31,3 +31,8 @@ body, button, a {
   cursor: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
