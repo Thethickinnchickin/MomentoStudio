@@ -13,7 +13,9 @@ export default function Hero() {
         loop
         muted
         playsInline
+        preload="auto"
       />
+      <source src="/videos/studio.mp4" type="video/mp4" />
 
       {/* Overlay for content */}
       <div className={styles.overlay}>
