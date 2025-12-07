@@ -4,6 +4,8 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./contact.module.css";
 import ContactSection from "@/components/ContactSection";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -43,6 +45,18 @@ export default function ContactPage() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.logoWrapper}>
+        <Link href="/">
+          <Image
+            src="/images/logo-white.png"
+            alt="Momentos Studios"
+            width={120}
+            height={120}
+            priority
+            className={styles.logoImage}
+          />
+        </Link>
+      </div>
       <h1 className={styles.heading}>Contact Us</h1>
 
       <p className={styles.paragraph}>

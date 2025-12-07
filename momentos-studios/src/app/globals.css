@@ -27,9 +27,9 @@ body {
 }
 
 /* Hide default cursor globally */
-body, button, a {
+/* body, button, a {
   cursor: none;
-}
+} */
 
 html {
   scroll-behavior: smooth;

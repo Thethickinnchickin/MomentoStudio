@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import CustomCursor from "../components/CustomCursor";
+// import CustomCursor from "../components/CustomCursor";
 
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" />
       </head>
       <body className="bg-black text-white">
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <Navbar />
         <main>{children}</main>
         <Footer />

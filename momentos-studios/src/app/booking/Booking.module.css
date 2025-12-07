@@ -34,7 +34,6 @@
   color: #fff; /* force white */
 }
 
-
 .text {
   font-size: 1.2rem;
   line-height: 1.8;
@@ -42,7 +41,7 @@
 }
 
 .text a {
-  color: #00bfff;
+  color: #0f8b4f; /* forest green links */
   text-decoration: underline;
 }
 
@@ -91,7 +90,7 @@
 /* Spinner */
 .spinner {
   border: 5px solid rgba(255, 255, 255, 0.2);
-  border-top: 5px solid #00bfff;
+  border-top: 5px solid #0f8b4f; /* forest green spinner */
   border-radius: 50%;
   width: 50px;
   height: 50px;

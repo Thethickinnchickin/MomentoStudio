@@ -19,11 +19,12 @@
 .footerLogo {
   width: 120px;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 5px #00bfff);
+  filter: drop-shadow(0 0 5px #228C22); /* forest green */
 }
 
 .footerText {
   font-size: 0.875rem;
+  color: #b0b0b0;
 }
 
 .socialLinks {
@@ -47,12 +48,12 @@
   bottom: -2px;
   width: 0;
   height: 2px;
-  background-color: #00bfff;
+  background-color: #228C22; /* forest green underline */
   transition: width 0.3s ease;
 }
 
 .socialLink:hover {
-  color: #00bfff;
+  color: #228C22; /* forest green on hover */
 }
 
 .socialLink:hover::after {

@@ -10,7 +10,7 @@
   color: white;
   z-index: 50;
   font-family: 'Montserrat', sans-serif;
-  border-bottom: 1px solid #00bfff;
+  border-bottom: 1px solid #228C22;
 }
 
 .logo {
@@ -23,7 +23,7 @@
   height: 95px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 0 3px #00bfff);
+  filter: drop-shadow(0 0 6px #228C22);
 }
 
 .links {
@@ -53,7 +53,7 @@
 }
 
 .links a:hover {
-  color: #00bfff;
+  color: #228C22;
 }
 
 .links a:hover::after {
@@ -72,20 +72,20 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+  box-shadow: 0 0 10px rgba(34, 140, 34, 0.3);
   backdrop-filter: blur(5px);
 }
 
 .button:hover {
-  background: rgba(0, 191, 255, 0.2);
-  border-color: rgba(0, 191, 255, 0.5);
-  box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
+  background: rgba(34, 140, 34, 0.2);
+  border-color: rgba(34, 140, 34, 0.5);
+  box-shadow: 0 0 25px rgba(34, 140, 34, 0.6);
   transform: translateY(-2px);
 }
 
 .button:active {
   transform: translateY(1px);
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+  box-shadow: 0 0 15px rgba(34, 140, 34, 0.4);
 }
 
 .iconGroup {
@@ -101,7 +101,7 @@
 }
 
 .iconGroup a img:hover {
-  filter: invert(1) brightness(1.5) drop-shadow(0 0 6px #00bfff);
+  filter: invert(1) brightness(1.5) drop-shadow(0 0 6px #228C22);
   transform: scale(1.1);
 }
 

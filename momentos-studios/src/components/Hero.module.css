@@ -2,10 +2,10 @@
 
 /* Hero.module.css */
 
-/* Root variables stay the same */
+/* Updated root variables */
 :root {
-  --primary: #00bfff;
-  --primary-dark: #009acd;
+  --primary: #228c22;
+  --primary-dark: #1a681a;
   --overlay-bg: rgba(0, 0, 0, 0.5);
   --text-color: #ffffff;
   --card-bg: rgba(0, 0, 0, 0.6);
@@ -44,7 +44,7 @@
   padding: 0 20px;
 }
 
-/* Logo Card entrance - smooth, less bouncy */
+/* Logo Card entrance */
 .logoCard {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -60,7 +60,6 @@
   max-height: 350px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  /* Smooth entrance animation */
   opacity: 0;
   transform: translateY(-30px) scale(0.9);
   animation: logoCardEntrance 1s ease-out forwards;
@@ -81,10 +80,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  filter: drop-shadow(0 0 5px #00bfff);
+  filter: drop-shadow(0 0 5px #228c22);
 }
 
-/* Logo image smooth fade-in */
 .logo img {
   height: 55px;
   width: auto;
@@ -92,7 +90,6 @@
   transform: translateY(-20px);
   animation: logoFadeIn 0.8s ease-out forwards;
   animation-delay: 0.3s;
-  
 }
 
 @keyframes logoFadeIn {
@@ -106,7 +103,6 @@
   }
 }
 
-/* Logo text fade-in */
 .logoText {
   color: white;
   font-family: "Viaoda Libre", cursive;
@@ -149,6 +145,7 @@
   margin-bottom: 2rem;
 }
 
+/* CTA button updated to green */
 .ctaButton {
   background-color: var(--primary);
   border: none;
@@ -159,7 +156,7 @@
   padding: 0.8rem 2.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(34, 140, 34, 0.4);
   opacity: 0;
   animation: textFadeIn 1s ease forwards;
   animation-delay: 1.2s;
@@ -168,7 +165,7 @@
 .ctaButton:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(0, 191, 255, 0.5);
+  box-shadow: 0 12px 25px rgba(34, 140, 34, 0.5);
 }
 
 /* Responsive */
@@ -184,8 +181,6 @@
   }
 }
 
-/* Add this to your Hero.module.css */
-
 /* Button entrance animation */
 .button {
   background: rgba(255, 255, 255, 0.1);
@@ -199,30 +194,27 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+  box-shadow: 0 0 15px rgba(34, 140, 34, 0.3);
   backdrop-filter: blur(10px);
 
-  /* New entrance animation */
   opacity: 0;
   transform: translateY(20px);
   animation: buttonEntrance 0.8s ease-out forwards;
-  animation-delay: 1.4s; /* comes after logo and text */
+  animation-delay: 1.4s;
 }
 
 .button:hover {
-  background: rgba(0, 191, 255, 0.2);
-  border-color: rgba(0, 191, 255, 0.5);
-  box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
+  background: rgba(34, 140, 34, 0.2);
+  border-color: rgba(34, 140, 34, 0.5);
+  box-shadow: 0 0 25px rgba(34, 140, 34, 0.6);
   transform: translateY(-2px);
-  cursor: none;
 }
 
 .button:active {
   transform: translateY(1px);
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+  box-shadow: 0 0 15px rgba(34, 140, 34, 0.4);
 }
 
-/* Keyframes for button entrance */
 @keyframes buttonEntrance {
   0% {
     opacity: 0;
@@ -237,5 +229,3 @@
 .video {
   pointer-events: none;
 }
-
-

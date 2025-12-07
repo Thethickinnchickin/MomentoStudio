@@ -69,17 +69,16 @@
 
 /* Hover glow */
 .card:hover {
-  border-color: rgba(0, 191, 255, 0.7);
-  box-shadow: 0 0 12px rgba(0, 191, 255, 0.4);
+  border-color: rgba(34, 140, 34, 0.7); /* forest green */
+  box-shadow: 0 0 12px rgba(34, 140, 34, 0.4);
 }
 
 /* Active state glow */
 .card.active {
-  border-color: rgba(0, 191, 255, 1);
-  box-shadow: 0 0 18px rgba(0, 191, 255, 0.6);
+  border-color: rgba(34, 140, 34, 1);
+  box-shadow: 0 0 18px rgba(34, 140, 34, 0.6);
 }
 
-/* Entrance animation keyframe */
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -97,7 +96,7 @@
 }
 
 .active .question {
-  color: rgba(0, 191, 255, 1);
+  color: rgba(34, 140, 34, 1); /* forest green */
 }
 
 .answer {
@@ -120,7 +119,7 @@
 }
 
 .contactNote a {
-  color: rgba(0, 191, 255, 1);
+  color: rgba(34, 140, 34, 1); /* forest green */
   font-weight: 600;
   text-decoration: underline;
 }

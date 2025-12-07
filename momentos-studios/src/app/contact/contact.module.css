@@ -1,7 +1,7 @@
 .container {
   max-width: 850px;
   margin: 0 auto;
-  padding: 8rem 1.5rem 6rem; /* pushes content lower */
+  padding: 10rem 1.5rem 6rem; /* pushes content lower */
   font-family: Arial, sans-serif;
   opacity: 0;
   transform: translateY(40px);
@@ -87,7 +87,7 @@
 
 .button {
   position: relative;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.12); /* keep the grayish base */
   color: white;
   padding: 0.9rem 2.5rem;
   border-radius: 40px;
@@ -98,22 +98,23 @@
   backdrop-filter: blur(10px);
   letter-spacing: 1px;
   transition: all 0.35s ease;
-  box-shadow: 0 0 8px rgba(0, 191, 255, 0.5);
+  box-shadow: 0 0 8px rgba(34, 140, 34, 0.5); /* subtle green glow in idle */
 }
 
 /* Hover effect */
 .button:hover {
-  background: rgba(0, 191, 255, 0.25);
-  border-color: rgba(0, 191, 255, 0.7);
+  background: rgba(34, 140, 34, 0.25); /* forest green hover */
+  border-color: rgba(34, 140, 34, 0.7);
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 18px rgba(0, 191, 255, 0.75);
+  box-shadow: 0 0 18px rgba(34, 140, 34, 0.75);
 }
 
 /* Click effect */
 .button:active {
   transform: translateY(1px) scale(0.98);
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  box-shadow: 0 0 10px rgba(34, 140, 34, 0.5);
 }
+
 
 
 .status {
@@ -141,4 +142,17 @@
   flex-direction: column;
   gap: 0.4rem;
   font-size: 1rem;
+}
+
+
+/* Logo for Contact Page */
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logoImage {
+  filter: drop-shadow(0 0 5px #228C22);
+  border-radius: 12px;
 }

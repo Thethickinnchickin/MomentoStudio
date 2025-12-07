@@ -26,6 +26,26 @@ export default function AboutSection() {
   return (
     <section id="about" className={`${styles.section}`}>
       <div className={styles.wrapper}>
+
+        <motion.div
+          className={styles.logoWrapper}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <Link href="/">
+            <Image
+              src="/images/logo-white.png"
+              alt="Momentos Studios"
+              width={120}
+              height={120}
+              priority
+              className={styles.logoImage}
+            />
+          </Link>
+        </motion.div>
+
         <motion.h2 className={styles.tagline} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
           Our Studio
         </motion.h2>
@@ -56,23 +76,26 @@ export default function AboutSection() {
           Whether you need fast tracking, mixing, production, DJ recording, or full lockouts — we built this studio for flow and creative freedom.
         </motion.p>
 
-        <motion.div className={styles.sessionGrid} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-          {sessions.map((session, index) => (
-            <motion.div
-              key={index}
-              className={styles.session}
-              style={{ backgroundImage: `url(${session.img})` }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-            >
-              <div className={styles.overlay}></div>
-              <h3>{session.title}</h3>
-              <p >{session.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        <Link href="/booking">
+          <motion.div className={styles.sessionGrid} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+            {sessions.map((session, index) => (
+              <motion.div
+                key={index}
+                className={styles.session}
+                style={{ backgroundImage: `url(${session.img})` }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+              >
+                <div className={styles.overlay}></div>
+                <h3>{session.title}</h3>
+                <p >{session.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </Link>
+
 
         <div className={styles.ctaWrapper}>
           <Link href="/booking">

@@ -48,7 +48,7 @@ export default function BookingPage() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Scheduler */}
+        {/* Right Column: Trafft Scheduler */}
         <motion.div className={styles.schedulerWrapper}>
           {loading && (
             <div className={styles.loadingOverlay}>
@@ -57,7 +57,7 @@ export default function BookingPage() {
             </div>
           )}
           <iframe
-            src="https://app.acuityscheduling.com/schedule.php?owner=37744896"
+            src="https://momentosstudios.trafft.com/"
             title="Book Studio Time"
             className={styles.schedulerIframe}
             onLoad={() => setLoading(false)}
