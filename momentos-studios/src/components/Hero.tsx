@@ -45,7 +45,7 @@ export default function Hero() {
         {/* Logo Card */}
         <div className={styles.logoCard}>
           <Image
-            src="/images/logo-white.png"
+            src="/images/notlogo.png"
             alt="Momentos Studios"
             width={180}
             height={180}

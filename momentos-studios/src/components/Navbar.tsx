@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className={styles.logo}>
         <Link href="/">
           <Image
-            src="/images/logo-white.png"
+            src="/images/notlogo.png"
             alt="Momentos Studios"
             width={60}
             height={60}

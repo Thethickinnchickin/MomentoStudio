@@ -171,7 +171,7 @@
 }
 
 .logoImage {
-  filter: drop-shadow(0 0 5px var(--primary));
+  filter: drop-shadow(0 0 5px #63d663);
   border-radius: 12px;
 }
 

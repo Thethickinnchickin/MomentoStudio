@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  filter: drop-shadow(0 0 5px #228c22);
+  filter: drop-shadow(0 0 5px #63d663);
 }
 
 .logo img {

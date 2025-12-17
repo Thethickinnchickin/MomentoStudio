@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Logo centered */}
         <div className={styles.footerLogoWrapper}>
           <Image
-            src="/images/logo-white.png"
+            src="/images/notlogo.png"
             alt="Momentos Studios Logo"
             width={60}   // smaller, visible
             height={60}

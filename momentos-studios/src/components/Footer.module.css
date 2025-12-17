@@ -19,7 +19,7 @@
 .footerLogo {
   width: 120px;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 5px #228C22); /* forest green */
+  filter: drop-shadow(0 0 5px #63d663); /* forest green */
 }
 
 .footerText {

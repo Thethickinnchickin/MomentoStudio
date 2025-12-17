@@ -48,7 +48,7 @@ export default function ContactPage() {
       <div className={styles.logoWrapper}>
         <Link href="/">
           <Image
-            src="/images/logo-white.png"
+            src="/images/notlogo.png"
             alt="Momentos Studios"
             width={120}
             height={120}
