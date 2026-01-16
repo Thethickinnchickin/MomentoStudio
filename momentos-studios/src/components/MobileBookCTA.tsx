@@ -8,12 +8,14 @@ import { trackEvent } from "@/lib/analytics";
 
 export default function MobileBookCTA() {
   const pathname = usePathname();
-  const [show, setShow] = useState(pathname !== "/");
-  if (pathname === "/booking") {
-    return null;
-  }
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    if (pathname === "/booking") {
+      setShow(false);
+      return;
+    }
+
     if (pathname !== "/") {
       setShow(true);
       return;
@@ -36,7 +38,7 @@ export default function MobileBookCTA() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  if (!show) {
+  if (pathname === "/booking" || !show) {
     return null;
   }
 
