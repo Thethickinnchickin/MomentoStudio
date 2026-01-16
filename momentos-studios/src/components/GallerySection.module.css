@@ -1,0 +1,81 @@
+.section {
+  padding: var(--space-section) 2rem;
+  background: radial-gradient(circle at top, rgba(34, 140, 34, 0.12), transparent 55%),
+    var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.title {
+  font-size: 2.6rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ctaLink {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border-strong);
+  padding-bottom: 4px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ctaLink:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.ctaButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-glow);
+}
+
+.ctaButton:hover {
+  background: rgba(34, 140, 34, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow-strong);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+}

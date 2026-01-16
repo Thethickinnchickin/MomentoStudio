@@ -12,22 +12,36 @@ export default function Footer() {
             alt="Momentos Studios Logo"
             width={60}   // smaller, visible
             height={60}
-            priority={true} // loads quickly for LCP
+            sizes="60px"
             className={styles.footerLogo}
           />
         </div>
 
         {/* Text */}
         <p className={styles.footerText}>
-          © {new Date().getFullYear()} Momentos Studios. All rights reserved.
+          (c) {new Date().getFullYear()} Momentos Studios. All rights reserved.
         </p>
 
         {/* Social links */}
         <div className={styles.socialLinks}>
-          <a href="#" className={styles.socialLink}>Instagram</a>
-          <a href="#" className={styles.socialLink}>TikTok</a>
+          <a
+            href="https://www.instagram.com/momentos__studios/"
+            className={styles.socialLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          <a href="mailto:info@momentos.studio" className={styles.socialLink}>
+            Email
+          </a>
         </div>
       </div>
     </footer>
   );
 }
+
+
+
+
+

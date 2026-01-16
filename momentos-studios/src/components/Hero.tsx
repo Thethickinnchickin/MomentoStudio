@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,7 +34,8 @@ export default function Hero() {
         playsInline
         muted
         loop
-        preload="auto"
+        preload="metadata"
+        poster="/images/studio1.png"
         disablePictureInPicture
         controls={false}
       >
@@ -49,6 +51,7 @@ export default function Hero() {
             alt="Momentos Studios"
             width={180}
             height={180}
+            sizes="180px"
             className={styles.logo}
           />
         </div>
@@ -60,7 +63,12 @@ export default function Hero() {
         </div>
 
         <Link href="/booking">
-          <button className={styles.button}>Book Now</button>
+          <button
+            className={styles.button}
+            onClick={() => trackEvent("booking_cta_click", { source: "hero" })}
+          >
+            Book Now
+          </button>
         </Link>
       </div>
     </section>

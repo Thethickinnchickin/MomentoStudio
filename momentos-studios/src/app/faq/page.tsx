@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Script from "next/script";
 import styles from "./faq.module.css";
 
 export default function FAQPage() {
@@ -31,7 +32,7 @@ export default function FAQPage() {
     },
     {
       question: "How many people can comfortably be in the control room / live room?",
-      answer: "4–5 people comfortably.",
+      answer: "4-5 people comfortably.",
     },
     {
       question: "Food / drinks?",
@@ -46,7 +47,7 @@ export default function FAQPage() {
     {
       question: "Do you do video or podcast recording?",
       answer:
-        "Yes — we have multiple phone mounts around the studio, lighting, and multi-mic setups available.",
+        "Yes - we have multiple phone mounts around the studio, lighting, and multi-mic setups available.",
     },
   ];
 
@@ -57,8 +58,26 @@ export default function FAQPage() {
     setTimeout(() => setLoaded(true), 200);
   }, []);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer.replace(/\n/g, " "),
+      },
+    })),
+  };
+
   return (
     <section className={`${styles.faqSection} ${loaded ? styles.loaded : ""}`}>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <h1 className={styles.heading}>Frequently Asked Questions</h1>
 
       <div className={styles.faqList}>
@@ -67,11 +86,21 @@ export default function FAQPage() {
             key={index}
             className={`${styles.card} ${openIndex === index ? styles.active : ""}`}
             style={{ animationDelay: `${index * 0.1}s` }}
+            role="button"
+            tabIndex={0}
+            aria-expanded={openIndex === index}
+            aria-controls={`faq-answer-${index}`}
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                setOpenIndex(openIndex === index ? null : index);
+              }
+            }}
           >
             <div className={styles.question}>{item.question}</div>
             {openIndex === index && (
-              <div className={styles.answer}>
+              <div className={styles.answer} id={`faq-answer-${index}`}>
                 {item.answer.split("\n").map((line, i) => (
                   <p key={i}>{line}</p>
                 ))}
@@ -82,12 +111,15 @@ export default function FAQPage() {
       </div>
 
       <p className={styles.contactNote}>
-        Still got questions? Just shoot us a text or email —{" "}
+        Still got questions? Just shoot us a text or email -{" "}
         <a href="mailto:info@momentosstudios.com">
           info@momentosstudios.com
         </a>{" "}
-        — we answer fast.
+        - we answer fast.
       </p>
     </section>
   );
 }
+
+
+
