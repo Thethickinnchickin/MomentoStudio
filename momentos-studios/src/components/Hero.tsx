@@ -64,6 +64,7 @@ export default function Hero() {
 
         <Link href="/booking">
           <button
+            id="hero-book-cta"
             className={styles.button}
             onClick={() => trackEvent("booking_cta_click", { source: "hero" })}
           >
